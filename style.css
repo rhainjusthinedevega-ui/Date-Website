@@ -1,0 +1,162 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  background: linear-gradient(135deg, #ffe0ec, #ffc2d9, #fff0f5);
+  color: #a83262;
+}
+
+.card {
+  position: relative;
+  z-index: 2;
+  width: min(90%, 450px);
+  padding: 38px 24px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.92);
+  border: 2px solid white;
+  border-radius: 28px;
+  box-shadow: 0 15px 45px rgba(180, 55, 100, 0.18);
+}
+
+.bear {
+  font-size: 76px;
+  animation: bounce 1.5s infinite ease-in-out;
+}
+
+h1 {
+  margin: 18px 0 12px;
+  font-size: clamp(27px, 6vw, 36px);
+  line-height: 1.2;
+}
+
+.subtitle {
+  color: #bd6a8b;
+  font-size: 16px;
+}
+
+.buttons {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  min-height: 65px;
+  margin-top: 28px;
+}
+
+button {
+  border: none;
+  border-radius: 50px;
+  padding: 13px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: inherit;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+#yesBtn {
+  color: white;
+  background: #ff5c97;
+  box-shadow: 0 5px 12px #ffb2ce;
+}
+
+#yesBtn:hover {
+  background: #ec347b;
+  transform: scale(1.08);
+}
+
+#noBtn {
+  color: #b44870;
+  background: #ffe3ee;
+  position: relative;
+  z-index: 3;
+}
+
+#message {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.6;
+  margin-top: 22px;
+}
+
+.hearts span {
+  position: absolute;
+  bottom: -60px;
+  font-size: 28px;
+  opacity: 0.7;
+  animation: floatUp 8s linear infinite;
+}
+
+.hearts span:nth-child(1) {
+  left: 8%;
+  animation-delay: 0s;
+}
+
+.hearts span:nth-child(2) {
+  left: 25%;
+  animation-delay: 2s;
+}
+
+.hearts span:nth-child(3) {
+  left: 45%;
+  animation-delay: 4s;
+}
+
+.hearts span:nth-child(4) {
+  left: 65%;
+  animation-delay: 1s;
+}
+
+.hearts span:nth-child(5) {
+  left: 82%;
+  animation-delay: 3s;
+}
+
+.hearts span:nth-child(6) {
+  left: 94%;
+  animation-delay: 5s;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.7;
+  }
+
+  to {
+    transform: translateY(-120vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
